@@ -7,6 +7,12 @@ desktop, and consumes a **mock REST API** through a proper Dio networking + repo
 There is **no hardcoded business data in the UI** — every screen loads from the API and has real
 loading (shimmer), empty and error states.
 
+## Screenshots
+
+| Dashboard | Transactions | Insights |
+| :---: | :---: | :---: |
+| <img src="screenshots/aurum-0.jpeg" width="240" alt="Dashboard — balance, card carousel and quick actions" /> | <img src="screenshots/aurum-1.jpeg" width="240" alt="Transactions — searchable, filterable activity list" /> | <img src="screenshots/aurum-2.jpeg" width="240" alt="Insights — spending donut and category breakdown" /> |
+
 ## Tech stack
 
 | Concern | Choice |
@@ -71,28 +77,31 @@ language, security, logout).
 ```bash
 cd mock-api
 npm install
-npm run start:custom   # full server: /auth/login, /auth/register, /transfers, /auth/me
-# or: npm start        # plain json-server CRUD only
+npm start               # full server: custom auth/transfer/payment routes + json-server
+# or: npm run start:json-only   # plain json-server CRUD only (no custom routes)
 ```
 
-The API listens on `http://localhost:3000`. Endpoints:
+The API listens on `http://localhost:3000` (override with `PORT`). Endpoints:
 
 ```
-POST  /auth/login        -> { token, user }
-POST  /auth/register     -> { token, user }
-GET   /auth/me           -> user
-GET   /accounts
+POST  /auth/login            -> { token, user }
+POST  /auth/register         -> { token, user }
+GET   /auth/me               -> user
+POST  /auth/change-password  -> { ok }            (validates length)
+GET   /accounts              PATCH /accounts/:id   (balance; used by top-up / pay-bills)
 GET   /cards     GET /cards/:id     PATCH /cards/:id   (toggle "frozen")
 GET   /transactions?accountId=&category=&from=&to=&q=&_page=&_limit=
 GET   /transactions/:id
 GET   /beneficiaries
 POST  /transfers
+GET   /billers               POST /payments          (pay bills)
+POST  /paymentRequests       (request money)
 GET   /insights/spending
 GET   /notifications     PATCH /notifications/:id   (toggle "read")
 ```
 
 Seed data: 1 user, 3 accounts, 3 cards, 40 transactions, 5 beneficiaries, 6 notifications,
-and a spending-insights object.
+6 billers, and a spending-insights object.
 
 ## 3. Run the app
 
