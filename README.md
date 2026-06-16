@@ -13,6 +13,65 @@ loading (shimmer), empty and error states.
 | :---: | :---: | :---: |
 | <img src="screenshots/aurum-0.jpeg" width="240" alt="Dashboard — balance, card carousel and quick actions" /> | <img src="screenshots/aurum-1.jpeg" width="240" alt="Transactions — searchable, filterable activity list" /> | <img src="screenshots/aurum-2.jpeg" width="240" alt="Insights — spending donut and category breakdown" /> |
 
+## What the app does
+
+Aurum Bank is a full digital-banking client. A user signs in, sees their balances and cards at a
+glance, moves money four different ways, tracks where it went, and manages their profile and
+security — all backed by a REST API with realistic loading, empty and error states.
+
+### 🔐 Onboarding & sign-in
+- First-launch **onboarding** carousel, then **login**, **register** and **forgot password** flows.
+- Session is restored on relaunch from a securely stored token; a branded **splash** holds the app
+  until auth is resolved, then routes you to the right place.
+- Optional **biometric unlock** (Face ID / fingerprint) where the device supports it.
+
+### 🏠 Dashboard
+- **Total balance** across your accounts, with a live currency-formatted headline.
+- Swipeable **card carousel** showing each card with its real network branding.
+- Four **quick actions** — Send, Request, Pay, Top-up — and a **recent activity** preview.
+- Notification **bell with an unread badge**.
+
+### 💸 Move money (4 flows)
+- **Send** — pick a beneficiary → enter an amount (balance-validated) → review fees & total →
+  confirm → animated success.
+- **Request** — generate a shareable **payment request** with a reference code and link you can
+  copy and send to anyone.
+- **Pay bills** — choose from saved **billers**, enter an amount, and pay from an account
+  (balance is debited for real).
+- **Top-up** — add funds to an account from a linked card, with quick preset amounts.
+
+### 💳 Accounts & cards
+- Browse all cards; open a card for full **details**.
+- **Freeze / unfreeze** a card — a frozen card shows a clear black “locked” cover and blocks
+  payments.
+- **Add a card** (holder, number, expiry, network, color).
+- Official **Visa**, **Mastercard** (interlocking circles) and **Amex** brand marks rendered in-app.
+
+### 📋 Transactions
+- Searchable, **category-filterable** activity list with pagination.
+- Credit/debit styling, **pending / completed / failed** statuses, and a per-transaction **detail**
+  view. On wide screens the list and detail show **side-by-side**.
+
+### 📊 Insights
+- Spending **donut by category**, **monthly trend**, and **budget** progress — powered by `fl_chart`.
+
+### 🔔 Notifications
+- Transaction, security, promo and system notifications with **read / unread** state that drives the
+  dashboard badge.
+
+### 👤 Profile & settings
+- **Edit profile** — update display name, phone and avatar color (email is read-only).
+- **Change password** with current/new/confirm validation.
+- **Appearance**: persistent **light / dark / system** theme + Material You **dynamic color**.
+- **Language** picker, privacy & security toggles, and **sign out**.
+
+### ✨ Throughout
+- **Material 3** design, full **light & dark** themes, and **adaptive** layouts from phone → tablet →
+  desktop.
+- **No hardcoded business data** — every screen loads from the API with real **shimmer loading**,
+  **empty** and **error + retry** states (a chaos interceptor injects latency/failures so these are
+  genuinely exercised).
+
 ## Tech stack
 
 | Concern | Choice |
@@ -48,14 +107,12 @@ mock-api/      json-server: db.json, routes.json, server.js
 Repositories expose domain (freezed) models; Riverpod controllers hold UI state and call
 repositories. API/JSON shapes never leak into the UI.
 
-## Screens & flows
+## Primary user journey
 
-Splash → Onboarding → Auth (login / register / forgot password + optional biometric unlock) →
-Dashboard (balance, card carousel, quick actions, recent activity) → Accounts & Cards (card
-detail, freeze/unfreeze, add card) → Transactions (paginated, searchable, filterable list +
-detail, two-pane on desktop) → Transfer (beneficiary → amount → review → confirm → success) →
-Insights (donut, monthly trend, budgets) → Notifications (read/unread) → Settings (theme,
-language, security, logout).
+> Splash → Onboarding → Auth → **Dashboard** → (Send · Request · Pay · Top-up) · Cards · Transactions
+> · Insights · Notifications · Settings → Edit profile / Change password.
+
+See [**What the app does**](#what-the-app-does) above for the full feature breakdown.
 
 ## Adaptive layout
 
