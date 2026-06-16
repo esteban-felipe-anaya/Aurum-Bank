@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../core/theme/design_tokens.dart';
 import '../../core/utils/color_utils.dart';
 import '../../data/models/bank_card.dart';
+import 'card_brand_mark.dart';
 
 /// A polished, brand-styled payment card. Used in the dashboard carousel and
 /// on the card detail screen. Shows a "frozen" overlay when applicable.
@@ -56,15 +57,7 @@ class CreditCardWidget extends StatelessWidget {
                     Icons.contactless_rounded,
                     color: onCard.withValues(alpha: 0.9),
                   ),
-                  Text(
-                    card.brand.toUpperCase(),
-                    style: TextStyle(
-                      color: onCard,
-                      fontWeight: FontWeight.w800,
-                      letterSpacing: 1.5,
-                      fontSize: 18,
-                    ),
-                  ),
+                  CardBrandMark(brand: card.brand, height: 30),
                 ],
               ),
               const Spacer(),
@@ -116,22 +109,57 @@ class CreditCardWidget extends StatelessWidget {
           Positioned.fill(
             child: ClipRRect(
               borderRadius: Radii.cardLg,
-              child: Container(
-                color: Colors.black.withValues(alpha: 0.35),
-                alignment: Alignment.center,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: const [
-                    Icon(Icons.ac_unit_rounded, color: Colors.white, size: 32),
-                    SizedBox(height: Spacing.sm),
-                    Text(
-                      'Frozen',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
+              // A near-opaque black cover so the card visibly reads as locked.
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Colors.black.withValues(alpha: 0.82),
+                      Colors.black.withValues(alpha: 0.72),
+                    ],
+                  ),
+                ),
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(Spacing.md),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withValues(alpha: 0.12),
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.25),
+                          ),
+                        ),
+                        child: const Icon(
+                          Icons.ac_unit_rounded,
+                          color: Colors.white,
+                          size: 30,
+                        ),
                       ),
-                    ),
-                  ],
+                      const SizedBox(height: Spacing.md),
+                      const Text(
+                        'Card frozen',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 16,
+                          letterSpacing: 0.3,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        'Payments are blocked',
+                        style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.75),
+                          fontSize: 12,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

@@ -12,9 +12,14 @@ import '../../features/cards/presentation/cards_screen.dart';
 import '../../features/dashboard/presentation/dashboard_screen.dart';
 import '../../features/insights/presentation/insights_screen.dart';
 import '../../features/notifications/presentation/notifications_screen.dart';
+import '../../features/payments/presentation/pay_bills_screen.dart';
+import '../../features/payments/presentation/request_money_screen.dart';
+import '../../features/payments/presentation/top_up_screen.dart';
+import '../../features/profile/presentation/edit_profile_screen.dart';
 import '../../features/onboarding/application/onboarding_controller.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/onboarding/presentation/splash_screen.dart';
+import '../../features/settings/presentation/change_password_screen.dart';
 import '../../features/settings/presentation/settings_screen.dart';
 import '../../features/shell/presentation/app_shell.dart';
 import '../../features/transactions/presentation/transaction_detail_screen.dart';
@@ -103,6 +108,31 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: AppRoutes.addCard,
         parentNavigatorKey: _rootNavigatorKey,
         builder: (_, _) => const AddCardScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.requestMoney,
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (_, _) => const RequestMoneyScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.payBills,
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (_, _) => const PayBillsScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.topUp,
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (_, _) => const TopUpScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.editProfile,
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (_, _) => const EditProfileScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.changePassword,
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (_, _) => const ChangePasswordScreen(),
       ),
       // Adaptive shell with bottom-nav / rail branches.
       StatefulShellRoute.indexedStack(

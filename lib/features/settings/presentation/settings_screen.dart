@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../core/router/app_routes.dart';
 import '../../../core/theme/design_tokens.dart';
 import '../../../core/utils/color_utils.dart';
 import '../../../shared/widgets/max_width_body.dart';
@@ -107,40 +109,49 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           children: [
             // Profile
             Card(
-              child: Padding(
-                padding: const EdgeInsets.all(Spacing.lg),
-                child: Row(
-                  children: [
-                    CircleAvatar(
-                      radius: 28,
-                      backgroundColor: colorFromHex(user?.avatarColor),
-                      child: Text(
-                        (user?.name.isNotEmpty ?? false) ? user!.name[0] : '?',
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
+              child: InkWell(
+                borderRadius: Radii.card,
+                onTap: () => context.push(AppRoutes.editProfile),
+                child: Padding(
+                  padding: const EdgeInsets.all(Spacing.lg),
+                  child: Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 28,
+                        backgroundColor: colorFromHex(user?.avatarColor),
+                        child: Text(
+                          (user?.name.isNotEmpty ?? false) ? user!.name[0] : '?',
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 22,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(width: Spacing.lg),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            user?.name ?? 'Aurum member',
-                            style: Theme.of(context).textTheme.titleMedium,
-                          ),
-                          if (user?.email != null)
+                      const SizedBox(width: Spacing.lg),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
                             Text(
-                              user!.email,
-                              style: TextStyle(color: scheme.onSurfaceVariant),
+                              user?.name ?? 'Aurum member',
+                              style: Theme.of(context).textTheme.titleMedium,
                             ),
-                        ],
+                            if (user?.email != null)
+                              Text(
+                                user!.email,
+                                style: TextStyle(color: scheme.onSurfaceVariant),
+                              ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                      Icon(
+                        Icons.edit_outlined,
+                        color: scheme.onSurfaceVariant,
+                        size: 20,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -232,13 +243,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                     leading: const Icon(Icons.lock_reset_rounded),
                     title: const Text('Change password'),
                     trailing: const Icon(Icons.chevron_right_rounded),
-                    onTap: () => ScaffoldMessenger.of(context)
-                      ..hideCurrentSnackBar()
-                      ..showSnackBar(
-                        const SnackBar(
-                          content: Text('Password reset is coming soon'),
-                        ),
-                      ),
+                    onTap: () => context.push(AppRoutes.changePassword),
                   ),
                 ],
               ),

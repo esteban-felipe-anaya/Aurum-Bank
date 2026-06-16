@@ -9,6 +9,11 @@ abstract interface class AuthRepository {
   Future<AuthResponse> login(LoginRequest request);
   Future<AuthResponse> register(RegisterRequest request);
   Future<User> me();
+  Future<User> updateProfile(User user);
+  Future<void> changePassword({
+    required String currentPassword,
+    required String newPassword,
+  });
 }
 
 class AuthRepositoryImpl implements AuthRepository {
@@ -51,6 +56,41 @@ class AuthRepositoryImpl implements AuthRepository {
           ? data['user'] as Map<String, dynamic>
           : data;
       return User.fromJson(userJson);
+    } catch (e) {
+      throw mapDioError(e);
+    }
+  }
+
+  @override
+  Future<User> updateProfile(User user) async {
+    try {
+      final res = await _dio.patch<Map<String, dynamic>>(
+        '/users/${user.id}',
+        data: {
+          'name': user.name,
+          'phone': user.phone,
+          'avatarColor': user.avatarColor,
+        },
+      );
+      return User.fromJson(res.data!);
+    } catch (e) {
+      throw mapDioError(e);
+    }
+  }
+
+  @override
+  Future<void> changePassword({
+    required String currentPassword,
+    required String newPassword,
+  }) async {
+    try {
+      await _dio.post<Map<String, dynamic>>(
+        '/auth/change-password',
+        data: {
+          'currentPassword': currentPassword,
+          'newPassword': newPassword,
+        },
+      );
     } catch (e) {
       throw mapDioError(e);
     }

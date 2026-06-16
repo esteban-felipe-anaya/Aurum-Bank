@@ -22,16 +22,24 @@ class SplashScreen extends StatelessWidget {
               curve: Curves.easeOutBack,
               builder: (context, scale, child) =>
                   Transform.scale(scale: scale, child: child),
-              child: Container(
-                padding: const EdgeInsets.all(Spacing.xl),
+              child: DecoratedBox(
                 decoration: BoxDecoration(
-                  color: scheme.primaryContainer,
-                  shape: BoxShape.circle,
+                  borderRadius: Radii.cardLg,
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF0C1130).withValues(alpha: 0.4),
+                      blurRadius: 24,
+                      offset: const Offset(0, 12),
+                    ),
+                  ],
                 ),
-                child: Icon(
-                  Icons.account_balance_rounded,
-                  size: 48,
-                  color: scheme.onPrimaryContainer,
+                child: ClipRRect(
+                  borderRadius: Radii.cardLg,
+                  child: Image.asset(
+                    'assets/icon/aurum_icon.png',
+                    width: 96,
+                    height: 96,
+                  ),
                 ),
               ),
             ),

@@ -42,10 +42,25 @@ server.post('/transfers', (req, res) => {
   });
 });
 
+// Change password — validates only that a current + new password were sent.
+server.post('/auth/change-password', (req, res) => {
+  const { currentPassword, newPassword } = req.body || {};
+  if (!currentPassword || !newPassword) {
+    return res.status(400).jsonp({ message: 'Both passwords are required.' });
+  }
+  if (String(newPassword).length < 8) {
+    return res
+      .status(400)
+      .jsonp({ message: 'New password must be at least 8 characters.' });
+  }
+  res.status(200).jsonp({ ok: true, changedAt: new Date().toISOString() });
+});
+
 // Nice REST URL rewrites, then the json-server router
 server.use(jsonServer.rewriter(require('./routes.json')));
 server.use(router);
 
-server.listen(3000, '0.0.0.0', () => {
-  console.log('Mock API running at http://localhost:3000');
+const port = process.env.PORT || 3000;
+server.listen(port, '0.0.0.0', () => {
+  console.log(`Mock API running at http://localhost:${port}`);
 });
