@@ -58,6 +58,18 @@ class AuthController extends AsyncNotifier<AuthSession> {
     });
   }
 
+  /// Persists profile edits and updates the in-memory session user.
+  Future<void> updateProfile(User updated) async {
+    final saved = await ref.read(authRepositoryProvider).updateProfile(updated);
+    final current = state.value;
+    state = AsyncData(
+      AuthSession(
+        user: saved,
+        authenticated: current?.authenticated ?? true,
+      ),
+    );
+  }
+
   Future<void> logout() async {
     await ref.read(secureTokenStoreProvider).clear();
     state = const AsyncData(AuthSession.unauthenticated);

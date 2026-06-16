@@ -8,6 +8,7 @@ import '../../data/repositories/beneficiaries_repository.dart';
 import '../../data/repositories/cards_repository.dart';
 import '../../data/repositories/insights_repository.dart';
 import '../../data/repositories/notifications_repository.dart';
+import '../../data/repositories/payments_repository.dart';
 import '../../data/repositories/transactions_repository.dart';
 import '../../data/repositories/transfer_repository.dart';
 import '../network/dio_client.dart';
@@ -68,4 +69,8 @@ final insightsRepositoryProvider = Provider<InsightsRepository>(
 
 final notificationsRepositoryProvider = Provider<NotificationsRepository>(
   (ref) => NotificationsRepositoryImpl(ref.watch(dioProvider)),
+);
+
+final paymentsRepositoryProvider = Provider<PaymentsRepository>(
+  (ref) => PaymentsRepositoryImpl(ref.watch(dioProvider)),
 );

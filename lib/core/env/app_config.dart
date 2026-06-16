@@ -11,7 +11,7 @@ class AppConfig {
   /// host machine is reachable at 10.0.2.2 — pass it via --dart-define.
   static const String baseUrl = String.fromEnvironment(
     'API_BASE_URL',
-    defaultValue: 'http://localhost:3000',
+    defaultValue: 'http://192.168.6.124:3000',
   );
 
   /// When true, the [ChaosInterceptor] injects artificial latency and

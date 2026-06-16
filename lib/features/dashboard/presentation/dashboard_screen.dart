@@ -270,10 +270,18 @@ class _QuickActions extends StatelessWidget {
       (
         Icons.south_west_rounded,
         'Request',
-        () => _soon(context, 'Request money'),
+        () => context.push(AppRoutes.requestMoney),
       ),
-      (Icons.receipt_long_rounded, 'Pay', () => _soon(context, 'Pay bills')),
-      (Icons.add_card_rounded, 'Top-up', () => _soon(context, 'Top-up')),
+      (
+        Icons.receipt_long_rounded,
+        'Pay',
+        () => context.push(AppRoutes.payBills),
+      ),
+      (
+        Icons.add_card_rounded,
+        'Top-up',
+        () => context.push(AppRoutes.topUp),
+      ),
     ];
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -284,12 +292,6 @@ class _QuickActions extends StatelessWidget {
           ),
       ],
     );
-  }
-
-  static void _soon(BuildContext context, String what) {
-    ScaffoldMessenger.of(context)
-      ..hideCurrentSnackBar()
-      ..showSnackBar(SnackBar(content: Text('$what is coming soon')));
   }
 }
 

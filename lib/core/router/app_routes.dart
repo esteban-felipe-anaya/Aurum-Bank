@@ -15,6 +15,11 @@ abstract final class AppRoutes {
   static const transfer = '/transfer';
   static const notifications = '/notifications';
   static const addCard = '/add-card';
+  static const requestMoney = '/request-money';
+  static const payBills = '/pay-bills';
+  static const topUp = '/top-up';
+  static const editProfile = '/edit-profile';
+  static const changePassword = '/change-password';
 
   static String transactionDetail(String id) => '/transactions/$id';
   static String cardDetail(String id) => '/cards/$id';

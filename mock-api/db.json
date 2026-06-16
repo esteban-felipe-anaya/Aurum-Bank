@@ -42,7 +42,7 @@
       "last4": "4021",
       "holder": "ALEX MORGAN",
       "expiry": "08/28",
-      "frozen": true,
+      "frozen": false,
       "color": "#1A1A2E"
     },
     {
@@ -591,7 +591,7 @@
       "title": "Payment received",
       "body": "You received $1,200.00 from Acme Payroll.",
       "type": "transaction",
-      "read": false,
+      "read": true,
       "date": "2026-06-12T09:00:00Z"
     },
     {
@@ -599,7 +599,7 @@
       "title": "New login detected",
       "body": "A new login from San Francisco, CA was detected on your account.",
       "type": "security",
-      "read": false,
+      "read": true,
       "date": "2026-06-11T21:14:00Z"
     },
     {
@@ -723,5 +723,51 @@
         "limit": 200
       }
     ]
-  }
+  },
+  "billers": [
+    {
+      "id": "bil_01",
+      "name": "PG&E Electricity",
+      "category": "utilities",
+      "icon": "bolt",
+      "accountMasked": "Acct •••• 4821"
+    },
+    {
+      "id": "bil_02",
+      "name": "Comcast Internet",
+      "category": "utilities",
+      "icon": "wifi",
+      "accountMasked": "Acct •••• 7733"
+    },
+    {
+      "id": "bil_03",
+      "name": "City Water & Sewer",
+      "category": "utilities",
+      "icon": "water_drop",
+      "accountMasked": "Acct •••• 1190"
+    },
+    {
+      "id": "bil_04",
+      "name": "AT&T Wireless",
+      "category": "phone",
+      "icon": "smartphone",
+      "accountMasked": "Acct •••• 5567"
+    },
+    {
+      "id": "bil_05",
+      "name": "Aurum Visa Card",
+      "category": "credit",
+      "icon": "credit_card",
+      "accountMasked": "•••• 4021"
+    },
+    {
+      "id": "bil_06",
+      "name": "State Farm Insurance",
+      "category": "insurance",
+      "icon": "shield",
+      "accountMasked": "Policy •••• 8090"
+    }
+  ],
+  "payments": [],
+  "paymentRequests": []
 }

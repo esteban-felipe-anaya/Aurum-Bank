@@ -60,12 +60,31 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
   build_runner: ^2.15.0
   freezed: ^3.2.6-dev.1
   json_serializable: ^6.14.0
   riverpod_generator: ^4.0.4
   mocktail: ^1.0.5
   http_mock_adapter: ^0.6.1
+
+# App launcher icon — the gold "A" Aurum monogram. Regenerate the source PNGs
+# with `node tool/gen_icon.js`, then `dart run flutter_launcher_icons`.
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/aurum_icon.png"
+  remove_alpha_ios: true
+  adaptive_icon_background: "#0C1130"
+  adaptive_icon_foreground: "assets/icon/aurum_foreground.png"
+  web:
+    generate: true
+    image_path: "assets/icon/aurum_icon.png"
+    background_color: "#0C1130"
+    theme_color: "#C8902B"
+  windows:
+    generate: true
+    image_path: "assets/icon/aurum_icon.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -77,6 +96,9 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  assets:
+    - assets/icon/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
