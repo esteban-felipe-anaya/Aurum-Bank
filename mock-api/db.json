@@ -1,0 +1,727 @@
+{
+  "users": [
+    {
+      "id": "usr_01",
+      "name": "Alex Morgan",
+      "email": "alex@demo.app",
+      "phone": "+1 415 555 0132",
+      "avatarColor": "#6C5CE7"
+    }
+  ],
+  "accounts": [
+    {
+      "id": "acc_01",
+      "name": "Everyday Checking",
+      "type": "checking",
+      "currency": "USD",
+      "balance": 8240.55,
+      "accountNumberMasked": "•••• 4021"
+    },
+    {
+      "id": "acc_02",
+      "name": "Rainy Day Savings",
+      "type": "savings",
+      "currency": "USD",
+      "balance": 23980.12,
+      "accountNumberMasked": "•••• 7788"
+    },
+    {
+      "id": "acc_03",
+      "name": "Platinum Credit",
+      "type": "credit",
+      "currency": "USD",
+      "balance": -1342.78,
+      "accountNumberMasked": "•••• 9930"
+    }
+  ],
+  "cards": [
+    {
+      "id": "card_01",
+      "accountId": "acc_01",
+      "brand": "visa",
+      "last4": "4021",
+      "holder": "ALEX MORGAN",
+      "expiry": "08/28",
+      "frozen": true,
+      "color": "#1A1A2E"
+    },
+    {
+      "id": "card_02",
+      "accountId": "acc_02",
+      "brand": "mastercard",
+      "last4": "7788",
+      "holder": "ALEX MORGAN",
+      "expiry": "11/27",
+      "frozen": false,
+      "color": "#0F3460"
+    },
+    {
+      "id": "card_03",
+      "accountId": "acc_03",
+      "brand": "amex",
+      "last4": "9930",
+      "holder": "ALEX MORGAN",
+      "expiry": "03/29",
+      "frozen": true,
+      "color": "#7D5BA6"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "txn_1001",
+      "accountId": "acc_01",
+      "title": "Spotify Premium",
+      "merchant": "Spotify",
+      "category": "subscriptions",
+      "amount": -9.99,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-06-12T08:15:00Z"
+    },
+    {
+      "id": "txn_1002",
+      "accountId": "acc_01",
+      "title": "Salary Deposit",
+      "merchant": "Acme Payroll",
+      "category": "income",
+      "amount": 4200,
+      "currency": "USD",
+      "type": "credit",
+      "status": "completed",
+      "date": "2026-06-11T06:00:00Z"
+    },
+    {
+      "id": "txn_1003",
+      "accountId": "acc_01",
+      "title": "Whole Foods Market",
+      "merchant": "Whole Foods",
+      "category": "groceries",
+      "amount": -86.42,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-06-10T18:42:00Z"
+    },
+    {
+      "id": "txn_1004",
+      "accountId": "acc_01",
+      "title": "Uber Ride",
+      "merchant": "Uber",
+      "category": "transport",
+      "amount": -18.3,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-06-10T09:05:00Z"
+    },
+    {
+      "id": "txn_1005",
+      "accountId": "acc_03",
+      "title": "Amazon Order",
+      "merchant": "Amazon",
+      "category": "shopping",
+      "amount": -132.75,
+      "currency": "USD",
+      "type": "debit",
+      "status": "pending",
+      "date": "2026-06-09T20:11:00Z"
+    },
+    {
+      "id": "txn_1006",
+      "accountId": "acc_01",
+      "title": "Starbucks Coffee",
+      "merchant": "Starbucks",
+      "category": "dining",
+      "amount": -6.75,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-06-09T07:48:00Z"
+    },
+    {
+      "id": "txn_1007",
+      "accountId": "acc_01",
+      "title": "Netflix Subscription",
+      "merchant": "Netflix",
+      "category": "subscriptions",
+      "amount": -15.49,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-06-08T12:00:00Z"
+    },
+    {
+      "id": "txn_1008",
+      "accountId": "acc_01",
+      "title": "Shell Fuel",
+      "merchant": "Shell",
+      "category": "transport",
+      "amount": -54.2,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-06-07T17:33:00Z"
+    },
+    {
+      "id": "txn_1009",
+      "accountId": "acc_03",
+      "title": "Apple Store",
+      "merchant": "Apple",
+      "category": "shopping",
+      "amount": -249,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-06-06T14:20:00Z"
+    },
+    {
+      "id": "txn_1010",
+      "accountId": "acc_01",
+      "title": "PG&E Electricity",
+      "merchant": "PG&E",
+      "category": "utilities",
+      "amount": -112.88,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-06-05T11:15:00Z"
+    },
+    {
+      "id": "txn_1011",
+      "accountId": "acc_01",
+      "title": "Steam Games",
+      "merchant": "Steam",
+      "category": "entertainment",
+      "amount": -39.99,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-06-04T22:05:00Z"
+    },
+    {
+      "id": "txn_1012",
+      "accountId": "acc_01",
+      "title": "CVS Pharmacy",
+      "merchant": "CVS Pharmacy",
+      "category": "health",
+      "amount": -27.6,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-06-03T16:40:00Z"
+    },
+    {
+      "id": "txn_1013",
+      "accountId": "acc_01",
+      "title": "Transfer to Savings",
+      "merchant": "Internal Transfer",
+      "category": "transfers",
+      "amount": -500,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-06-02T10:00:00Z"
+    },
+    {
+      "id": "txn_1014",
+      "accountId": "acc_02",
+      "title": "Transfer from Checking",
+      "merchant": "Internal Transfer",
+      "category": "transfers",
+      "amount": 500,
+      "currency": "USD",
+      "type": "credit",
+      "status": "completed",
+      "date": "2026-06-02T10:00:00Z"
+    },
+    {
+      "id": "txn_1015",
+      "accountId": "acc_01",
+      "title": "Trader Joe's",
+      "merchant": "Trader Joe's",
+      "category": "groceries",
+      "amount": -64.18,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-06-01T19:25:00Z"
+    },
+    {
+      "id": "txn_1016",
+      "accountId": "acc_03",
+      "title": "Delta Airlines",
+      "merchant": "Delta Airlines",
+      "category": "travel",
+      "amount": -412.4,
+      "currency": "USD",
+      "type": "debit",
+      "status": "pending",
+      "date": "2026-05-30T13:50:00Z"
+    },
+    {
+      "id": "txn_1017",
+      "accountId": "acc_01",
+      "title": "Chipotle",
+      "merchant": "Chipotle",
+      "category": "dining",
+      "amount": -13.45,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-05-29T12:30:00Z"
+    },
+    {
+      "id": "txn_1018",
+      "accountId": "acc_01",
+      "title": "Amazon Refund",
+      "merchant": "Amazon",
+      "category": "income",
+      "amount": 42.3,
+      "currency": "USD",
+      "type": "credit",
+      "status": "completed",
+      "date": "2026-05-28T15:10:00Z"
+    },
+    {
+      "id": "txn_1019",
+      "accountId": "acc_01",
+      "title": "Lyft Ride",
+      "merchant": "Lyft",
+      "category": "transport",
+      "amount": -22.1,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-05-27T08:55:00Z"
+    },
+    {
+      "id": "txn_1020",
+      "accountId": "acc_01",
+      "title": "YouTube Premium",
+      "merchant": "YouTube",
+      "category": "subscriptions",
+      "amount": -11.99,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-05-26T09:00:00Z"
+    },
+    {
+      "id": "txn_1021",
+      "accountId": "acc_03",
+      "title": "Best Buy",
+      "merchant": "Best Buy",
+      "category": "shopping",
+      "amount": -89.99,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-05-25T17:20:00Z"
+    },
+    {
+      "id": "txn_1022",
+      "accountId": "acc_01",
+      "title": "Safeway Groceries",
+      "merchant": "Safeway",
+      "category": "groceries",
+      "amount": -73.66,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-05-24T18:05:00Z"
+    },
+    {
+      "id": "txn_1023",
+      "accountId": "acc_01",
+      "title": "AMC Theatres",
+      "merchant": "AMC Theatres",
+      "category": "entertainment",
+      "amount": -28.5,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-05-23T20:45:00Z"
+    },
+    {
+      "id": "txn_1024",
+      "accountId": "acc_01",
+      "title": "Comcast Internet",
+      "merchant": "Comcast",
+      "category": "utilities",
+      "amount": -79.99,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-05-22T11:30:00Z"
+    },
+    {
+      "id": "txn_1025",
+      "accountId": "acc_01",
+      "title": "Walgreens",
+      "merchant": "Walgreens",
+      "category": "health",
+      "amount": -19.85,
+      "currency": "USD",
+      "type": "debit",
+      "status": "failed",
+      "date": "2026-05-21T10:10:00Z"
+    },
+    {
+      "id": "txn_1026",
+      "accountId": "acc_01",
+      "title": "Salary Deposit",
+      "merchant": "Acme Payroll",
+      "category": "income",
+      "amount": 4200,
+      "currency": "USD",
+      "type": "credit",
+      "status": "completed",
+      "date": "2026-05-11T06:00:00Z"
+    },
+    {
+      "id": "txn_1027",
+      "accountId": "acc_01",
+      "title": "Whole Foods Market",
+      "merchant": "Whole Foods",
+      "category": "groceries",
+      "amount": -91.27,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-05-19T18:50:00Z"
+    },
+    {
+      "id": "txn_1028",
+      "accountId": "acc_01",
+      "title": "Dunkin' Donuts",
+      "merchant": "Dunkin'",
+      "category": "dining",
+      "amount": -8.2,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-05-18T07:35:00Z"
+    },
+    {
+      "id": "txn_1029",
+      "accountId": "acc_03",
+      "title": "Marriott Hotel",
+      "merchant": "Marriott",
+      "category": "travel",
+      "amount": -318,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-05-16T15:00:00Z"
+    },
+    {
+      "id": "txn_1030",
+      "accountId": "acc_01",
+      "title": "Shell Fuel",
+      "merchant": "Shell",
+      "category": "transport",
+      "amount": -48.75,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-05-14T17:10:00Z"
+    },
+    {
+      "id": "txn_1031",
+      "accountId": "acc_01",
+      "title": "Disney+ Subscription",
+      "merchant": "Disney+",
+      "category": "subscriptions",
+      "amount": -13.99,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-05-12T12:00:00Z"
+    },
+    {
+      "id": "txn_1032",
+      "accountId": "acc_01",
+      "title": "Target Run",
+      "merchant": "Target",
+      "category": "shopping",
+      "amount": -57.4,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-05-09T16:25:00Z"
+    },
+    {
+      "id": "txn_1033",
+      "accountId": "acc_01",
+      "title": "Olive Garden",
+      "merchant": "Olive Garden",
+      "category": "dining",
+      "amount": -46.8,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-05-06T19:40:00Z"
+    },
+    {
+      "id": "txn_1034",
+      "accountId": "acc_01",
+      "title": "Water & Sewer Bill",
+      "merchant": "City Utilities",
+      "category": "utilities",
+      "amount": -42.1,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-05-04T11:00:00Z"
+    },
+    {
+      "id": "txn_1035",
+      "accountId": "acc_01",
+      "title": "Kroger Groceries",
+      "merchant": "Kroger",
+      "category": "groceries",
+      "amount": -68.93,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-05-02T18:15:00Z"
+    },
+    {
+      "id": "txn_1036",
+      "accountId": "acc_01",
+      "title": "Salary Deposit",
+      "merchant": "Acme Payroll",
+      "category": "income",
+      "amount": 4200,
+      "currency": "USD",
+      "type": "credit",
+      "status": "completed",
+      "date": "2026-04-11T06:00:00Z"
+    },
+    {
+      "id": "txn_1037",
+      "accountId": "acc_01",
+      "title": "Planet Fitness",
+      "merchant": "Planet Fitness",
+      "category": "health",
+      "amount": -24.99,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-04-28T08:00:00Z"
+    },
+    {
+      "id": "txn_1038",
+      "accountId": "acc_03",
+      "title": "Expedia Booking",
+      "merchant": "Expedia",
+      "category": "travel",
+      "amount": -276.5,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-04-22T13:30:00Z"
+    },
+    {
+      "id": "txn_1039",
+      "accountId": "acc_01",
+      "title": "HBO Max",
+      "merchant": "HBO Max",
+      "category": "subscriptions",
+      "amount": -15.99,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-04-15T12:00:00Z"
+    },
+    {
+      "id": "txn_1040",
+      "accountId": "acc_01",
+      "title": "McDonald's",
+      "merchant": "McDonald's",
+      "category": "dining",
+      "amount": -11.3,
+      "currency": "USD",
+      "type": "debit",
+      "status": "completed",
+      "date": "2026-04-08T12:45:00Z"
+    }
+  ],
+  "beneficiaries": [
+    {
+      "id": "ben_01",
+      "name": "Jordan Lee",
+      "bank": "Chase",
+      "accountNumberMasked": "•••• 8842",
+      "avatarColor": "#00B894"
+    },
+    {
+      "id": "ben_02",
+      "name": "Taylor Reed",
+      "bank": "Bank of America",
+      "accountNumberMasked": "•••• 1209",
+      "avatarColor": "#0984E3"
+    },
+    {
+      "id": "ben_03",
+      "name": "Sam Patel",
+      "bank": "Wells Fargo",
+      "accountNumberMasked": "•••• 5567",
+      "avatarColor": "#E17055"
+    },
+    {
+      "id": "ben_04",
+      "name": "Riley Chen",
+      "bank": "Citibank",
+      "accountNumberMasked": "•••• 3380",
+      "avatarColor": "#FDCB6E"
+    },
+    {
+      "id": "ben_05",
+      "name": "Morgan Diaz",
+      "bank": "Capital One",
+      "accountNumberMasked": "•••• 7714",
+      "avatarColor": "#A29BFE"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "ntf_01",
+      "title": "Payment received",
+      "body": "You received $1,200.00 from Acme Payroll.",
+      "type": "transaction",
+      "read": false,
+      "date": "2026-06-12T09:00:00Z"
+    },
+    {
+      "id": "ntf_02",
+      "title": "New login detected",
+      "body": "A new login from San Francisco, CA was detected on your account.",
+      "type": "security",
+      "read": false,
+      "date": "2026-06-11T21:14:00Z"
+    },
+    {
+      "id": "ntf_03",
+      "title": "Card payment posted",
+      "body": "Your payment of $249.00 to Apple has posted.",
+      "type": "transaction",
+      "read": true,
+      "date": "2026-06-06T14:25:00Z"
+    },
+    {
+      "id": "ntf_04",
+      "title": "Earn 5% cashback",
+      "body": "Limited time: 5% cashback on all dining this month.",
+      "type": "promo",
+      "read": false,
+      "date": "2026-06-03T10:00:00Z"
+    },
+    {
+      "id": "ntf_05",
+      "title": "Statement ready",
+      "body": "Your May statement is now available to download.",
+      "type": "system",
+      "read": true,
+      "date": "2026-06-01T08:00:00Z"
+    },
+    {
+      "id": "ntf_06",
+      "title": "Card frozen",
+      "body": "Your Platinum Credit card ending 9930 was frozen.",
+      "type": "security",
+      "read": true,
+      "date": "2026-05-30T18:42:00Z"
+    }
+  ],
+  "spending": {
+    "period": "June 2026",
+    "total": 2380.42,
+    "byCategory": [
+      {
+        "category": "groceries",
+        "amount": 520.3,
+        "color": "#00B894"
+      },
+      {
+        "category": "dining",
+        "amount": 286.45,
+        "color": "#E17055"
+      },
+      {
+        "category": "shopping",
+        "amount": 471.74,
+        "color": "#0984E3"
+      },
+      {
+        "category": "transport",
+        "amount": 143.35,
+        "color": "#FDCB6E"
+      },
+      {
+        "category": "subscriptions",
+        "amount": 67.45,
+        "color": "#6C5CE7"
+      },
+      {
+        "category": "utilities",
+        "amount": 234.97,
+        "color": "#00CEC9"
+      },
+      {
+        "category": "travel",
+        "amount": 656.16,
+        "color": "#D63031"
+      }
+    ],
+    "trend": [
+      {
+        "month": "Jan",
+        "amount": 1980
+      },
+      {
+        "month": "Feb",
+        "amount": 2120.5
+      },
+      {
+        "month": "Mar",
+        "amount": 1875.25
+      },
+      {
+        "month": "Apr",
+        "amount": 2540.8
+      },
+      {
+        "month": "May",
+        "amount": 2210.15
+      },
+      {
+        "month": "Jun",
+        "amount": 2380.42
+      }
+    ],
+    "budgets": [
+      {
+        "category": "groceries",
+        "spent": 520.3,
+        "limit": 600
+      },
+      {
+        "category": "dining",
+        "spent": 286.45,
+        "limit": 300
+      },
+      {
+        "category": "shopping",
+        "spent": 471.74,
+        "limit": 400
+      },
+      {
+        "category": "transport",
+        "spent": 143.35,
+        "limit": 200
+      }
+    ]
+  }
+}

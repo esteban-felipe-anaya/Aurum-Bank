@@ -1,0 +1,11 @@
+{
+  "name": "flutter-fintech-mock-api",
+  "private": true,
+  "scripts": {
+    "start": "json-server --watch db.json --routes routes.json --port 3000 --host 0.0.0.0",
+    "start:custom": "node server.js"
+  },
+  "devDependencies": {
+    "json-server": "^0.17.4"
+  }
+}
