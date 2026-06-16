@@ -5,7 +5,7 @@
       "name": "Alex Morgan",
       "email": "alex@demo.app",
       "phone": "+1 415 555 0132",
-      "avatarColor": "#6C5CE7"
+      "avatarColor": "#FDCB6E"
     }
   ],
   "accounts": [
@@ -14,7 +14,7 @@
       "name": "Everyday Checking",
       "type": "checking",
       "currency": "USD",
-      "balance": 8240.55,
+      "balance": 8340.55,
       "accountNumberMasked": "•••• 4021"
     },
     {
@@ -62,7 +62,7 @@
       "last4": "9930",
       "holder": "ALEX MORGAN",
       "expiry": "03/29",
-      "frozen": true,
+      "frozen": false,
       "color": "#7D5BA6"
     }
   ],
@@ -615,7 +615,7 @@
       "title": "Earn 5% cashback",
       "body": "Limited time: 5% cashback on all dining this month.",
       "type": "promo",
-      "read": false,
+      "read": true,
       "date": "2026-06-03T10:00:00Z"
     },
     {
